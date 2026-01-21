@@ -21,20 +21,20 @@ function App() {
 
 
   useEffect(() => {
-    async function loadPosts(){
-     const unsub = onSnapshot(collection(db, "posts"), (snapshot) => {  
-      let listaPost = [];
-      snapshot.forEach((doc) => {
-        listaPost.push({
-          id: doc.id,
-          ...doc.data()
-        })
+  const unsub = onSnapshot(collection(db, "posts"), (snapshot) => {  
+    let listaPost = [];
+    snapshot.forEach((doc) => {
+      listaPost.push({
+        id: doc.id,
+        ...doc.data()
       })
-      setPosts(listaPost);
-    })  
-  }
-    loadPosts();
-  }, [])  
+    })
+    setPosts(listaPost);
+  });
+
+  return () => unsub();
+}, []);
+
 
   useEffect(() => { 
     async function checkLogin(){
