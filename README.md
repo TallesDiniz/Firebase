@@ -8,4 +8,4 @@ Um projeto simples utilizando react e firebase, projeto para praticar boas prát
 - React
 ---
 # Acesse o projeto aqui:
-[PrimeFlix](https://firebase-bfbh.vercel.app/)
+[Firebase](https://firebase-bfbh.vercel.app/)
